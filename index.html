@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Modals: Can, Could & Be Able To</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .content-section, .practice-exercise {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .tile {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* Custom styles for feedback */
+        .correct-answer {
+            color: #22c55e;
+            font-weight: bold;
+        }
+        .incorrect-answer {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        /* Styles for practice section tabs */
+        .practice-nav-btn {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: #4b5563; /* gray-600 */
+            font-weight: 500;
+            transition: color 0.3s, border-color 0.3s;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+        .practice-nav-btn.active-btn {
+            color: #d97706; /* amber-600 */
+            border-bottom-color: #d97706;
+        }
+        .practice-nav-container {
+            display: flex;
+            overflow-x: auto;
+            border-bottom: 1px solid #e5e7eb; /* gray-200 */
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <!-- Header Section -->
+        <header class="relative rounded-xl overflow-hidden text-white text-center p-12 md:p-20 mb-12 bg-gradient-to-r from-sky-500 to-indigo-600">
+            <div class="absolute inset-0 bg-cover bg-center z-0 opacity-20" style="background-image: url('https://placehold.co/1200x400/3b82f6/ffffff?text=Happy+Students');"></div>
+            <div class="relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Mastering English Modals</h1>
+                <p class="text-lg md:text-2xl">Learn to use <span class="font-semibold">Can</span>, <span class="font-semibold">Could</span>, and <span class="font-semibold">Be Able To</span> correctly!</p>
+                <p class="mt-4 text-md md:text-lg">Tento průvodce je navržen tak, aby pomohl českým studentům angličtiny pochopit a správně používat modální slovesa.</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tiles -->
+        <section id="navigation" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Explanation Tile -->
+            <div onclick="showSection('explanation')" class="tile cursor-pointer bg-white p-8 rounded-xl shadow-lg border border-gray-200 text-center">
+                <div class="text-5xl mb-4">📚</div>
+                <h2 class="text-2xl font-bold text-sky-600 mb-2">Explanation</h2>
+                <p class="text-gray-600">Vysvětlení a pravidla</p>
+            </div>
+            <!-- Practice Tile -->
+            <div onclick="showSection('practice')" class="tile cursor-pointer bg-white p-8 rounded-xl shadow-lg border border-gray-200 text-center">
+                <div class="text-5xl mb-4">✍️</div>
+                <h2 class="text-2xl font-bold text-amber-600 mb-2">Practice</h2>
+                <p class="text-gray-600">Interaktivní cvičení</p>
+            </div>
+            <!-- Mastery Tile -->
+            <div onclick="showSection('mastery')" class="tile cursor-pointer bg-white p-8 rounded-xl shadow-lg border border-gray-200 text-center">
+                <div class="text-5xl mb-4">🏆</div>
+                <h2 class="text-2xl font-bold text-emerald-600 mb-2">Mastery</h2>
+                <p class="text-gray-600">Otestujte si své znalosti</p>
+            </div>
+        </section>
+
+        <!-- Content Sections Container -->
+        <main id="content-container">
+
+            <!-- Explanation Section -->
+            <section id="explanation" class="content-section bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                <h2 class="text-3xl font-bold text-sky-700 mb-6">When to Use "Can", "Could", and "Be Able To"</h2>
+                
+                <!-- Can -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">1. Can</h3>
+                    <p class="mb-4">"Can" is the most common modal verb. We use it to talk about ability, permission, and possibility in the present.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-sky-100">
+                                <tr>
+                                    <th class="p-3 font-semibold">Usage</th>
+                                    <th class="p-3 font-semibold">Example</th>
+                                    <th class="p-3 font-semibold">Czech Translation (Překlad)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3"><strong class="text-sky-800">Ability (schopnost)</strong></td>
+                                    <td class="p-3">I <strong class="text-sky-800">can</strong> speak English.</td>
+                                    <td class="p-3">Umím mluvit anglicky.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3"><strong class="text-sky-800">Permission (povolení)</strong></td>
+                                    <td class="p-3"><strong class="text-sky-800">Can</strong> I go to the party?</td>
+                                    <td class="p-3">Můžu jít na večírek?</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3"><strong class="text-sky-800">Possibility (možnost)</strong></td>
+                                    <td class="p-3">It <strong class="text-sky-800">can</strong> get cold here at night.</td>
+                                    <td class="p-3">V noci se zde může ochladit.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Could -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">2. Could</h3>
+                    <p class="mb-4">"Could" is used for past ability, polite requests, and suggestions.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-amber-100">
+                                <tr>
+                                    <th class="p-3 font-semibold">Usage</th>
+                                    <th class="p-3 font-semibold">Example</th>
+                                    <th class="p-3 font-semibold">Czech Translation (Překlad)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3"><strong class="text-amber-800">Past Ability (minulá schopnost)</strong></td>
+                                    <td class="p-3">When I was young, I <strong class="text-amber-800">could</strong> run very fast.</td>
+                                    <td class="p-3">Když jsem byl mladý, uměl jsem běhat velmi rychle.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3"><strong class="text-amber-800">Polite Request (zdvořilá žádost)</strong></td>
+                                    <td class="p-3"><strong class="text-amber-800">Could</strong> you help me, please?</td>
+                                    <td class="p-3">Mohl byste mi, prosím, pomoci?</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3"><strong class="text-amber-800">Suggestion (návrh)</strong></td>
+                                    <td class="p-3">We <strong class="text-amber-800">could</strong> go to the cinema tonight.</td>
+                                    <td class="p-3">Mohli bychom jít dnes večer do kina.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Be Able To -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">3. Be Able To</h3>
+                    <p class="mb-4">"Be able to" is more formal and can be used in all tenses. It is necessary when we want to use other tenses like future or present perfect.</p>
+                     <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-emerald-100">
+                                <tr>
+                                    <th class="p-3 font-semibold">Usage</th>
+                                    <th class="p-3 font-semibold">Example</th>
+                                    <th class="p-3 font-semibold">Czech Translation (Překlad)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3"><strong class="text-emerald-800">Future (budoucnost)</strong></td>
+                                    <td class="p-3">Soon I <strong class="text-emerald-800">will be able to</strong> drive a car.</td>
+                                    <td class="p-3">Brzy budu moci řídit auto.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3"><strong class="text-emerald-800">Present Perfect (předpřítomný čas)</strong></td>
+                                    <td class="p-3">I haven't <strong class="text-emerald-800">been able to</strong> finish my homework.</td>
+                                    <td class="p-3">Nedokázal jsem dokončit svůj domácí úkol.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="p-3"><strong class="text-emerald-800">Specific Occasion in the Past</strong></td>
+                                    <td class="p-3">He <strong class="text-emerald-800">was able to</strong> escape the fire. (Not 'could')</td>
+                                    <td class="p-3">Podařilo se mu uniknout z požáru.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section id="practice" class="content-section bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                <h2 class="text-3xl font-bold text-amber-700 mb-4">Let's Practice! (Pojďme cvičit!)</h2>
+
+                <!-- Practice Sub-navigation -->
+                <div class="practice-nav-container">
+                    <button id="btn-ex-1" onclick="showExercise('exercise-1')" class="practice-nav-btn">Exercise 1</button>
+                    <button id="btn-ex-2" onclick="showExercise('exercise-2')" class="practice-nav-btn">Exercise 2</button>
+                    <button id="btn-ex-3" onclick="showExercise('exercise-3')" class="practice-nav-btn">Exercise 3</button>
+                    <button id="btn-ex-4" onclick="showExercise('exercise-4')" class="practice-nav-btn">Exercise 4</button>
+                    <button id="btn-ex-5" onclick="showExercise('exercise-5')" class="practice-nav-btn">Exercise 5</button>
+                </div>
+
+                <!-- Exercise Container -->
+                <div id="exercise-container">
+                    <!-- Exercise 1: Fill in the blanks -->
+                    <div id="exercise-1" class="practice-exercise">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Exercise 1: Fill in the Blanks</h3>
+                        <p class="mb-4 text-gray-600">Complete the sentences with 'can', 'could', or the correct form of 'be able to'.</p>
+                        <div class="space-y-4" id="fill-in-blanks">
+                            <!-- Questions will be dynamically inserted here -->
+                        </div>
+                        <button onclick="checkFillInBlanks()" class="mt-6 bg-amber-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-600 transition">Check Answers</button>
+                    </div>
+                    
+                    <!-- Exercise 2: Multiple Choice Quiz -->
+                    <div id="exercise-2" class="practice-exercise">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Exercise 2: Multiple Choice Quiz</h3>
+                        <p class="mb-4 text-gray-600">Choose the best option to complete the sentence.</p>
+                        <div class="space-y-4" id="quiz-container">
+                           <!-- Quiz questions will be dynamically inserted here -->
+                        </div>
+                        <button onclick="checkQuiz()" class="mt-6 bg-amber-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-600 transition">Submit Quiz</button>
+                        <div id="quiz-result" class="mt-4 text-lg font-semibold"></div>
+                    </div>
+
+                    <!-- Exercise 3: Complete the Story -->
+                    <div id="exercise-3" class="practice-exercise">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Exercise 3: My Brother, the Linguist</h3>
+                        <p class="mb-4 text-gray-600">Complete the sentences using 'can', 'can't', or the correct form of 'be able to'.</p>
+                        <div class="p-4 border rounded-lg bg-gray-50 leading-loose text-gray-700" id="new-exercise-container">
+                            <!-- New exercise content will be populated here -->
+                        </div>
+                        <button onclick="checkNewExercise()" class="mt-6 bg-amber-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-600 transition">Check Answers</button>
+                    </div>
+
+                    <!-- Exercise 4: Robert Collingwood -->
+                    <div id="exercise-4" class="practice-exercise">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Exercise 4: A Writer's Story</h3>
+                        <p class="mb-4 text-gray-600">Complete the sentences with 'can/can't', 'could/couldn't' or the correct form of '(not) able to'.</p>
+                        <div class="p-4 border rounded-lg bg-gray-50 leading-loose text-gray-700" id="exercise-4-container">
+                            <!-- Exercise 4 content will be populated here -->
+                        </div>
+                        <button onclick="checkExercise4()" class="mt-6 bg-amber-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-600 transition">Check Answers</button>
+                    </div>
+
+                    <!-- Exercise 5: Sundays in Britain -->
+                    <div id="exercise-5" class="practice-exercise">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Exercise 5: Choose the Best Option</h3>
+                        <p class="mb-4 text-gray-600">Choose the better alternative to complete each sentence.</p>
+                        <div class="space-y-4" id="exercise-5-container">
+                            <!-- Exercise 5 questions will be dynamically inserted here -->
+                        </div>
+                        <button onclick="checkExercise5()" class="mt-6 bg-amber-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-amber-600 transition">Check Answers</button>
+                        <div id="exercise-5-result" class="mt-4 text-lg font-semibold"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mastery Section -->
+            <section id="mastery" class="content-section bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                <h2 class="text-3xl font-bold text-emerald-700 mb-6">Mastery Challenge</h2>
+                
+                <!-- New Mastery Activity -->
+                <div id="mastery-article-section" class="mb-12">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Mastery Activity: Learning Struggles</h3>
+                    <p class="mb-4 text-gray-600">Read the article about people who have tried (but failed) to learn something. Complete the text with the phrases from the dropdowns.</p>
+                    <div id="mastery-article-container" class="space-y-6">
+                       <!-- JS will populate this -->
+                    </div>
+                    <button onclick="checkMasteryArticle()" class="mt-6 bg-emerald-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-emerald-600 transition">Check Article Answers</button>
+                </div>
+
+                <!-- Existing Mastery Quiz -->
+                 <h3 class="text-2xl font-semibold text-gray-800 mb-4">Mastery Quiz</h3>
+                 <p class="mb-6 text-gray-600">Test your knowledge with this final quiz. Choose the most appropriate answer for each sentence.</p>
+                <div class="space-y-5" id="mastery-quiz-container">
+                     <!-- Mastery quiz questions will be dynamically inserted here -->
+                </div>
+                <button onclick="checkMasteryQuiz()" class="mt-8 bg-emerald-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-600 transition text-lg">Check My Score</button>
+                <div id="mastery-quiz-result" class="mt-6 text-xl font-bold"></div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script>
+        const contentSections = document.querySelectorAll('.content-section');
+        let currentSection = null;
+
+        function showSection(sectionId) {
+            if (currentSection) {
+                currentSection.classList.remove('active');
+            }
+            if (currentSection && currentSection.id === sectionId) {
+                currentSection = null;
+                return;
+            }
+            const newSection = document.getElementById(sectionId);
+            if (newSection) {
+                newSection.classList.add('active');
+                currentSection = newSection;
+                newSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (sectionId === 'practice') {
+                    showExercise('exercise-1');
+                }
+            }
+        }
+        
+        function showExercise(exerciseId) {
+            document.querySelectorAll('.practice-nav-btn').forEach(btn => {
+                btn.classList.toggle('active-btn', btn.id === `btn-ex-${exerciseId.split('-')[1]}`);
+            });
+            document.querySelectorAll('.practice-exercise').forEach(ex => {
+                ex.classList.toggle('active', ex.id === exerciseId);
+            });
+        }
+
+        // --- Data for Exercises ---
+
+        const fillInBlanksQuestions = [
+            { sentence: "She ______ speak three languages fluently.", answer: "can" },
+            { sentence: "Next year, I ______ finally travel to Japan.", answer: "will be able to" },
+            { sentence: "When he was a child, he ______ swim very well.", answer: "could" },
+            { sentence: "Sorry, I haven't ______ finish the report yet.", answer: "been able to" },
+            { sentence: "______ you please pass the salt?", answer: "Could" },
+            { sentence: "The firefighters ______ rescue everyone from the building yesterday.", answer: "were able to" }
+        ];
+
+        const quizQuestions = [
+            { question: "I'm not busy, so I ______ help you tomorrow.", options: ["can", "could", "was able to"], answer: "can" },
+            { question: "She tried hard, but she ______ persuade him.", options: ["can't", "couldn't", "won't be able to"], answer: "couldn't" },
+            { question: "If you study hard, you ______ pass the exam.", options: ["can", "will be able to", "could"], answer: "will be able to" },
+            { question: "My grandfather ______ walk without a cane last year, but now he needs one.", options: ["can", "could", "was able to"], answer: "could" }
+        ];
+
+        const newExerciseAnswers = [ "can", "will be able to", "will be able to", "be able to", "can", "can't", "haven't been able to" ];
+        
+        const exercise4Answers = [ "couldn't", "was able to", "could", "was able to", "couldn't", "couldn't", "was able to", "could" ];
+
+        const exercise5Questions = [
+            { question: "A few years ago, on Sundays, you (1) ______ buy anything except a newspaper.", options: ["weren't able to", "couldn't"], answer: "couldn't" },
+            { question: "And you (2) ______ do anything either.", options: ["weren't able to", "couldn't"], answer: "couldn't" },
+            { question: "The only thing you (3) ______ do was go for a walk or go to church.", options: ["were able to", "could"], answer: "could" },
+            { question: "But recently the law has changed and people (4) ______ do much more.", options: ["have been able to", "could"], answer: "have been able to" },
+            { question: "Last Sunday I (5) ______ go shopping at the supermarket.", options: ["was able to", "could"], answer: "was able to" },
+            { question: "Then, in the afternoon, my son and I (6) ______ watch a professional football match.", options: ["were able to", "could"], answer: "were able to" }
+        ];
+
+        const masteryArticleOptions = [
+            "Select an answer...", "I've never been able to say", "I was able to learn", "you'll never be able to speak", "I just wasn't able to do it", "I hate not being able to communicate", "I would suddenly be able to do it", "all my friends are able to do"
+        ];
+        const masteryArticleAnswers = [
+            "I just wasn't able to do it", "all my friends are able to do", "I was able to learn", "I would suddenly be able to do it", "I've never been able to say", "I hate not being able to communicate", "you'll never be able to speak"
+        ];
+
+        const masteryQuizQuestions = [
+            { question: "After months of physical therapy, she ______ walk again.", options: ["could", "was able to", "can"], answer: "was able to", explanation: "Use 'was able to' for a specific achievement in the past." },
+            { question: "______ I borrow your pen for a moment?", options: ["Can", "Am I able to", "Could"], answer: "Can", explanation: "'Can' is common for informal permission. 'Could' is more polite." },
+            { question: "I'm afraid I ______ come to your party next Friday.", options: ["can't", "couldn't", "won't be able to"], answer: "won't be able to", explanation: "'Will be able to' is used for future ability." },
+            { question: "Since I started my new job, I haven't ______ go to the gym.", options: ["could", "been able to", "can"], answer: "been able to", explanation: "The present perfect tense requires 'be able to'." },
+            { question: "When the fog cleared, we ______ see the mountains.", options: ["could", "were able to", "can"], answer: "were able to", explanation: "'were able to' emphasizes the single successful event." }
+        ];
+
+        // --- Functions to Populate Exercises ---
+
+        function populateFillInBlanks() {
+            const container = document.getElementById('fill-in-blanks');
+            container.innerHTML = fillInBlanksQuestions.map((q, index) => `
+                <div class="flex items-center gap-2 flex-wrap">
+                    <p>${index + 1}. ${q.sentence.replace('______', `<input type="text" id="fill-${index}" class="p-2 border rounded-md w-40 focus:ring-2 focus:ring-amber-400 outline-none">`)}</p>
+                    <span id="feedback-fill-${index}"></span>
+                </div>
+            `).join('');
+        }
+
+        function populateQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = quizQuestions.map((q, index) => `
+                <div class="p-4 border rounded-lg">
+                    <p class="font-medium mb-2">${index + 1}. ${q.question}</p>
+                    <div class="flex flex-col space-y-1">
+                        ${q.options.map(option => `<label class="flex items-center"><input type="radio" name="quiz-${index}" value="${option}" class="mr-2">${option}</label>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function populateNewExercise() {
+            const container = document.getElementById('new-exercise-container');
+            const inputField = (index) => `<input type="text" id="new-ex-${index}" class="mx-1 p-1 border rounded-md w-48 focus:ring-2 focus:ring-amber-400 outline-none">`;
+            container.innerHTML = `<p>My brother (1) ${inputField(0)} speak four languages. At the moment he's studying Japanese and by the end of next year he (2) ${inputField(1)} speak five languages and he (3) ${inputField(2)} get a job with a Japanese company. I'd like to (4) ${inputField(3)} speak two languages! I (5) ${inputField(4)} only speak English and I (6) ${inputField(5)} really speak that very well! I'm going to French evening classes at the moment but I (7) ${inputField(6)} go every week because I've been too busy.<span id="feedback-new-ex-all" class="block mt-4 font-semibold"></span></p>`;
+        }
+        
+        function populateExercise4() {
+            const container = document.getElementById('exercise-4-container');
+            const inputField = (index) => `<input type="text" id="ex-4-${index}" class="mx-1 p-1 border rounded-md w-36 focus:ring-2 focus:ring-amber-400 outline-none">`;
+            container.innerHTML = `<p>When I started writing books I (1) ${inputField(0)} type so I wrote my first book with a pen and paper. A year after the book was published, I got my first royalty cheque and I (2) ${inputField(1)} buy a typewriter. But I (3) ${inputField(2)} only type with two fingers, so my second book took much longer to write. When I got my second royalty cheque, I (4) ${inputField(3)} buy a word processor. At first, I (5) ${inputField(4)} understand how to use it and I lost a whole chapter of my book! I (6) ${inputField(5)} find it anywhere on my computer. Fortunately, a friend, who was an expert on computers, (7) ${inputField(6)} find it for me and he said he (8) ${inputField(7)} teach me how to use a word processor properly.<span id="feedback-ex-4-all" class="block mt-4 font-semibold"></span></p>`;
+        }
+
+        function populateExercise5() {
+            const container = document.getElementById('exercise-5-container');
+            container.innerHTML = exercise5Questions.map((q, index) => `
+                <div class="p-4 border rounded-lg">
+                    <p class="font-medium mb-3">${q.question.replace(/\(\d\)/, '').trim()}</p>
+                    <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
+                        ${q.options.map(option => `<label class="flex items-center p-2 border rounded-md cursor-pointer hover:bg-amber-50 transition"><input type="radio" name="ex-5-${index}" value="${option}" class="mr-2"><span>${option}</span></label>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function populateMasteryArticle() {
+            const container = document.getElementById('mastery-article-container');
+            const createSelect = (id) => {
+                const optionsHtml = masteryArticleOptions.map(opt => `<option value="${opt}">${opt}</option>`).join('');
+                return `<select id="mastery-article-select-${id}" class="my-2 p-2 border rounded-md w-full focus:ring-2 focus:ring-emerald-400 outline-none">${optionsHtml}</select>`;
+            };
+            container.innerHTML = `
+                <div class="p-4 border rounded-lg bg-gray-50">
+                    <h4 class="font-bold text-lg">...pass my driving test</h4>
+                    <p class="mt-2 text-gray-700">I started having driving lessons when I was 17. Although I'm normally a quick learner, <sup>1</sup>${createSelect(0)}. After 18 months I failed my first test - I was really disappointed. Since then I've taken the test again three times, but I've always failed - usually on reversing or parking. The problem is I get so nervous during the tests that I can't drive properly. It's so embarrassing to admit that I can't learn to do something that <sup>2</sup>${createSelect(1)}.<br><em class="text-sm">- Amanda, Brighton</em></p>
+                </div>
+                <div class="p-4 border rounded-lg bg-gray-50">
+                    <h4 class="font-bold text-lg">...learn to dance</h4>
+                    <p class="mt-2 text-gray-700">I've always wanted to be able to dance salsa, and when I was working in Ecuador there were free classes, so I joined. After about ten hours of classes <sup>3</sup>${createSelect(2)} the steps, but I was dancing like a robot! I didn't give up, but soon everyone in the class was dancing and I was just slowly moving from side to side and counting out loud. I was sure that one day <sup>4</sup>${createSelect(3)} - but that never happened. I can still remember the first two steps, though, and I still try to dance when I hear a salsa tune, as long as nobody is watching.<br><em class="text-sm">- Sean, Oxford</em></p>
+                </div>
+                <div class="p-4 border rounded-lg bg-gray-50">
+                    <h4 class="font-bold text-lg">...speak a foreign language</h4>
+                    <p class="mt-2 text-gray-700">I've started learning English at least ten times. I've been to classes, I've had a private teacher, I've used a self-study course, but <sup>5</sup>${createSelect(4)} anything in English. I even had an English girlfriend once but she learned Spanish before I managed to improve my English, so we always spoke in Spanish. I travel a lot in my job and <sup>6</sup>${createSelect(5)} - it's so frustrating. I'm thirty-two now and I think if you don't learn a language when you're a child, or go and live in the country, <sup>7</sup>${createSelect(6)} it well.<br><em class="text-sm">- Guillermo, Madrid</em></p>
+                </div>
+            `;
+        }
+
+        function populateMasteryQuiz() {
+            const container = document.getElementById('mastery-quiz-container');
+            container.innerHTML = masteryQuizQuestions.map((q, index) => `
+                <div class="p-5 border-l-4 border-gray-200 rounded-r-lg bg-gray-50" id="mastery-q-container-${index}">
+                    <p class="font-semibold text-lg mb-3">${index + 1}. ${q.question}</p>
+                    <div class="space-y-2">
+                        ${q.options.map(option => `<label class="block cursor-pointer p-2 rounded-md hover:bg-gray-200 transition"><input type="radio" name="mastery-quiz-${index}" value="${option}" class="mr-3"><span class="text-gray-700">${option}</span></label>`).join('')}
+                    </div>
+                    <div id="feedback-mastery-${index}" class="mt-3 text-sm"></div>
+                </div>
+            `).join('');
+        }
+
+        // --- Functions to Check Answers ---
+
+        function checkAnswers(questions, type, containerId, resultId) {
+            let score = 0;
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="${containerId}-${index}"]:checked`);
+                const parentDiv = selected ? selected.closest('.p-4') : null;
+                if (selected) {
+                    const isCorrect = selected.value.toLowerCase() === q.answer.toLowerCase();
+                    if (isCorrect) score++;
+                    if(parentDiv) {
+                        parentDiv.classList.toggle('border-green-500', isCorrect);
+                        parentDiv.classList.toggle('border-red-500', !isCorrect);
+                    }
+                }
+            });
+            if(resultId) {
+                document.getElementById(resultId).textContent = `You scored ${score} out of ${questions.length}!`;
+            }
+        }
+        
+        function checkFillInTheBlanks(questions, prefix) {
+             questions.forEach((q, index) => {
+                const input = document.getElementById(`${prefix}-${index}`);
+                const feedback = document.getElementById(`feedback-fill-${index}`);
+                const isCorrect = input.value.trim().toLowerCase() === q.answer.toLowerCase();
+                feedback.textContent = isCorrect ? '✅ Correct!' : `❌ Incorrect. The answer is "${q.answer}".`;
+                feedback.className = isCorrect ? 'correct-answer' : 'incorrect-answer';
+                input.classList.toggle('border-green-500', isCorrect);
+                input.classList.toggle('border-red-500', !isCorrect);
+            });
+        }
+        
+        function checkStory(answers, prefix, feedbackId) {
+             let correctCount = 0;
+            answers.forEach((answer, index) => {
+                const input = document.getElementById(`${prefix}-${index}`);
+                const isCorrect = input.value.trim().toLowerCase() === answer.toLowerCase();
+                if(isCorrect) correctCount++;
+                input.classList.toggle('border-green-500', isCorrect);
+                input.classList.toggle('border-red-500', !isCorrect);
+            });
+            const feedback = document.getElementById(feedbackId);
+            const allCorrect = correctCount === answers.length;
+            feedback.textContent = allCorrect ? `✅ Excellent! You got all ${answers.length} correct.` : `❌ You have ${correctCount} out of ${answers.length} correct. Keep trying!`;
+            feedback.className = `${allCorrect ? 'correct-answer' : 'incorrect-answer'} block mt-4 font-semibold`;
+        }
+
+        const checkFillInBlanks = () => checkFillInTheBlanks(fillInBlanksQuestions, 'fill');
+        const checkQuiz = () => checkAnswers(quizQuestions, 'radio', 'quiz', 'quiz-result');
+        const checkNewExercise = () => checkStory(newExerciseAnswers, 'new-ex', 'feedback-new-ex-all');
+        const checkExercise4 = () => checkStory(exercise4Answers, 'ex-4', 'feedback-ex-4-all');
+        const checkExercise5 = () => checkAnswers(exercise5Questions, 'radio', 'ex-5', 'exercise-5-result');
+        
+        function checkMasteryArticle() {
+            masteryArticleAnswers.forEach((answer, index) => {
+                const select = document.getElementById(`mastery-article-select-${index}`);
+                const isCorrect = select.value === answer;
+                select.classList.toggle('border-green-500', isCorrect);
+                select.classList.toggle('border-red-500', !isCorrect);
+                select.classList.toggle('border-gray-300', false);
+            });
+        }
+
+        function checkMasteryQuiz() {
+            let score = 0;
+            masteryQuizQuestions.forEach((q, index) => {
+                const container = document.getElementById(`mastery-q-container-${index}`);
+                const feedback = document.getElementById(`feedback-mastery-${index}`);
+                const selected = document.querySelector(`input[name="mastery-quiz-${index}"]:checked`);
+                if (selected) {
+                    const isCorrect = selected.value.toLowerCase() === q.answer.toLowerCase();
+                    if(isCorrect) score++;
+                    container.style.borderColor = isCorrect ? '#22c55e' : '#ef4444';
+                    feedback.innerHTML = `<p class="${isCorrect ? 'correct-answer' : 'incorrect-answer'}">${isCorrect ? 'Correct!' : `Not quite. The correct answer is <strong>'${q.answer}'</strong>.`} ${q.explanation}</p>`;
+                } else {
+                     container.style.borderColor = '#f59e0b';
+                     feedback.innerHTML = `<p class="text-amber-600 font-semibold">Please select an answer.</p>`;
+                }
+            });
+            const resultDiv = document.getElementById('mastery-quiz-result');
+            let resultMessage = `Your score: ${score} out of ${masteryQuizQuestions.length}. `;
+            if(score === masteryQuizQuestions.length) {
+                resultMessage += "Excellent work! 🏆";
+                resultDiv.className = 'mt-6 text-xl font-bold text-emerald-600';
+            } else if (score >= masteryQuizQuestions.length / 2) {
+                resultMessage += "Good job, keep practicing! 👍";
+                 resultDiv.className = 'mt-6 text-xl font-bold text-amber-600';
+            } else {
+                resultMessage += "Don't worry, review the explanation and try again. 📚";
+                 resultDiv.className = 'mt-6 text-xl font-bold text-red-600';
+            }
+            resultDiv.textContent = resultMessage;
+        }
+
+        window.onload = () => {
+            populateFillInBlanks();
+            populateQuiz();
+            populateNewExercise();
+            populateExercise4();
+            populateExercise5();
+            populateMasteryArticle();
+            populateMasteryQuiz();
+        };
+
+    </script>
+
+</body>
+</html>
+
